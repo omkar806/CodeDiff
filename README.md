@@ -2,9 +2,9 @@
 
 This README file explains the functionality and implementation details of the Python script provided. The script compares two Python code snippets, normalizes their formatting, and identifies meaningful differences between them.
 
-## Functions
+# Functions
 
-### `normalize_code(code)`
+## `normalize_code(code)`
 
 ```python
 def normalize_code(code):
@@ -20,40 +20,40 @@ def normalize_code(code):
         return code  # Return the original code if there's a syntax error
 ```
 
-# Purpose: 
+### Purpose: 
 This function normalizes Python code by parsing it into an Abstract Syntax Tree (AST) and then converting it back to a string. This process removes unnecessary whitespace and standardizes the formatting.
-# Parameters:
+### Parameters:
 code (str): A string containing the Python code to be normalized.
-# Returns:
+### Returns:
 normalized_code (str): The normalized version of the input code. If there is a syntax error, it returns the original code.
 
-### is_comment(line)
+## is_comment(line)
 
 ``` python
    def is_comment(line):
     return line.strip().startswith('#')
 ```
-# Purpose: 
+### Purpose: 
 This function checks if a given line of code is a comment.
 Parameters:
-# line (str):
+### line (str):
 A string containing a single line of code.
-# Returns:
+### Returns:
 (bool): True if the line is a comment, False otherwise.
 
-### is_whitespace_change(line)
+## is_whitespace_change(line)
 ```python
 def is_whitespace_change(line):
     return line.strip() == ''
 ```
-# Purpose: 
+### Purpose: 
 This function checks if a given line of code is only whitespace.
-# Parameters:
+### Parameters:
 line (str): A string containing a single line of code.
-# Returns:
+### Returns:
 (bool): True if the line is only whitespace, False otherwise.
 
-### is_meaningful_diff(line)
+# i#s_meaningful_diff(line)
 
 ```python
   def is_meaningful_diff(line):
@@ -61,14 +61,14 @@ line (str): A string containing a single line of code.
     stripped_line = line.strip()
     return not (stripped_line.startswith('#') or stripped_line == '')
 ```
-# Purpose: 
+### Purpose: 
 This function determines if a given line of code represents a meaningful difference, excluding comments and whitespace.
-# Parameters:
+### Parameters:
 line (str): A string containing a single line of code.
-# Returns:
+### Returns:
 (bool): True if the line represents a meaningful difference, False otherwise.
 
-### resolve_diff(snippet_a, snippet_b)
+## resolve_diff(snippet_a, snippet_b)
 ```python
 def resolve_diff(snippet_a, snippet_b):
     normalized_a = normalize_code(snippet_a)
@@ -85,15 +85,15 @@ def resolve_diff(snippet_a, snippet_b):
 
     return meaningful_diffs
 ```
-# Purpose: 
+### Purpose: 
 This function compares two code snippets, normalizes them, and identifies the meaningful differences.
-# Parameters:
+### Parameters:
 snippet_a (str): A string containing the first code snippet.
 snippet_b (str): A string containing the second code snippet.
-# Returns:
+### Returns:
 meaningful_diffs (list): A list of strings representing the meaningful differences between the two snippets.
 
-### resolve_categorized_diff(snippet_a, snippet_b)
+## resolve_categorized_diff(snippet_a, snippet_b)
 
 ``` python
 def resolve_categorized_diff(snippet_a, snippet_b):
@@ -119,15 +119,15 @@ def resolve_categorized_diff(snippet_a, snippet_b):
 
     return categorized_diffs
 ```
-# Purpose: 
+### Purpose: 
 This function compares two code snippets, normalizes them, and categorizes the differences into comments, formatting changes, and interpreter-relevant changes.
-# Parameters:
+### Parameters:
 snippet_a (str): A string containing the first code snippet.
 snippet_b (str): A string containing the second code snippet.
-# Returns:
+### Returns:
 categorized_diffs (list): A list of dictionaries, each containing a type and the difference line.
 
-### Main Execution
+## Main Execution
 
 ``` python
 if __name__ == "__main__":
@@ -151,13 +151,13 @@ if __name__ == "__main__":
     print("\nMeaningful diffs between snippet_b and snippet_c:")
     print(resolve_diff(snippet_b, snippet_c))
 ```
-# Purpose: 
+### Purpose: 
 The main block of code runs comparisons between different code snippets and prints the meaningful differences.
 
-# Code Snippets:
+### Code Snippets:
 
 snippet_a: Contains a simple router definition.
 snippet_b: Contains a router definition with an additional comment and a parameter for redirect_slashes.
 snippet_c: Contains a router definition with the redirect_slashes parameter formatted differently.
-# Output: 
+### Output: 
 <img width="770" alt="image" src="https://github.com/omkar806/CodeDiff/assets/77787482/1aab947e-6d92-4a81-900d-7ce83f7967d9">
