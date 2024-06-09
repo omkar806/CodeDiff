@@ -159,5 +159,6 @@ The main block of code runs comparisons between different code snippets and prin
 snippet_a: Contains a simple router definition.
 snippet_b: Contains a router definition with an additional comment and a parameter for redirect_slashes.
 snippet_c: Contains a router definition with the redirect_slashes parameter formatted differently.
-### Output: 
+
+# Output: 
 <img width="770" alt="image" src="https://github.com/omkar806/CodeDiff/assets/77787482/1aab947e-6d92-4a81-900d-7ce83f7967d9">
